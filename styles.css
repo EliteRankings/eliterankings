@@ -1,8 +1,8 @@
-/* --- GLOBAL STYLES & VARIABLES --- */
+/* --- GLOBAL STYLES & VARIABLES (New Pinks and Roses Theme) --- */
 :root {
-    --primary-color: #0d47a1; /* Dark Blue */
-    --secondary-color: #ffd700; /* Gold/Yellow Accent */
-    --background-light: #f4f4f9;
+    --primary-color: #880E4F; /* Deep Rose / Maroon (for headings, buttons, main structure) */
+    --secondary-color: #EC4493; /* Medium Vibrant Pink (for accents, highlights) */
+    --background-light: #FCE4EC; /* Very light pink background */
     --text-color: #333;
     --font-heading: 'Segoe UI', Arial, sans-serif;
 }
@@ -10,7 +10,7 @@
 body {
     font-family: Arial, sans-serif;
     color: var(--text-color);
-    background-color: white;
+    background-color: white; /* Base background remains white for contrast */
     margin: 0;
     line-height: 1.6;
 }
@@ -22,11 +22,11 @@ body {
 }
 
 section {
-    padding: 40px 0; /* Reduced padding for cleaner tab look */
+    padding: 40px 0;
 }
 
 h2, h3 {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Deep Rose Headings */
     font-family: var(--font-heading);
     text-align: center;
     margin-bottom: 20px;
@@ -35,19 +35,19 @@ h2, h3 {
 /* --- HERO SECTION (Background Image) --- */
 .hero-section {
     color: white; 
-    padding: 100px 20px 80px; /* Adjusted padding */
+    padding: 100px 20px 80px; 
     text-align: center;
     
-    /* BACKGROUND IMAGE STYLES */
+    /* BACKGROUND IMAGE STYLES - REMEMBER TO UPLOAD hero-background.jpg */
     background-image: url('images/hero-background.jpg'); 
     background-size: cover; 
     background-position: center; 
     position: relative;
     overflow: hidden;
-    margin-bottom: 30px; /* Space between hero and tabs */
+    margin-bottom: 30px; 
 }
 
-/* Dark overlay */
+/* Dark overlay to ensure text readability */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -55,7 +55,7 @@ h2, h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.4); 
     z-index: 1;
 }
 .hero-section h1, .hero-section .subtitle, .hero-section p {
@@ -64,7 +64,10 @@ h2, h3 {
     color: white;
 }
 .hero-section h1 { font-size: 3.5em; margin-bottom: 0.1em; }
-.subtitle { color: var(--secondary-color); font-weight: 900; }
+.subtitle { 
+    color: var(--secondary-color); /* Vibrant Pink Accent */
+    font-weight: 900; 
+}
 
 
 /* ==================================== */
@@ -139,8 +142,8 @@ h2, h3 {
     background-color: white;
 }
 .outcome-box {
-    background-color: var(--background-light);
-    border-left: 5px solid var(--secondary-color);
+    background-color: var(--background-light); /* Light Pink Background */
+    border-left: 5px solid var(--secondary-color); /* Vibrant Pink Bar */
     padding: 30px;
     margin: 40px auto;
     max-width: 700px;
@@ -148,7 +151,7 @@ h2, h3 {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
 .pillars-section {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Deep Rose Background */
     color: white;
     padding: 60px 0;
 }
@@ -167,7 +170,7 @@ h2, h3 {
 /* Menu & Outcome Tab */
 .menu-outcome-section { text-align: center; }
 .callout-box {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Vibrant Pink Callout */
     padding: 40px;
     border-radius: 8px;
     max-width: 700px;
@@ -186,7 +189,7 @@ h2, h3 {
 
 /* Free Audit Tab */
 .cta-section {
-    background-color: var(--background-light); /* Changed background for contrast */
+    background-color: var(--background-light); /* Light Pink Background */
     text-align: center;
     padding: 60px 0;
 }
@@ -200,8 +203,8 @@ h2, h3 {
 }
 .button {
     display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    background-color: var(--secondary-color); /* Vibrant Pink Button */
+    color: white; /* Button text is white for contrast */
     padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
@@ -210,7 +213,7 @@ h2, h3 {
     margin-top: 20px;
     font-size: 1.1em;
 }
-.button:hover { background-color: #ffc107; }
+.button:hover { background-color: #FF70A4; } /* Slightly darker pink on hover */
 
 
 /* --- FOOTER --- */
@@ -219,7 +222,7 @@ footer {
     padding: 25px;
     border-top: 1px solid #ccc;
     font-size: 0.9em;
-    background-color: #eee;
+    background-color: var(--background-light);
 }
 footer a {
     color: var(--primary-color);
