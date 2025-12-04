@@ -22,79 +22,32 @@ body {
 }
 
 section {
-    padding: 80px 0;
+    padding: 40px 0; /* Reduced padding for cleaner tab look */
 }
 
-h1, h2, h3 {
+h2, h3 {
     color: var(--primary-color);
     font-family: var(--font-heading);
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* --- NAVIGATION BAR (The "Tabs") --- */
-.main-nav {
-    background-color: #fff; 
-    border-bottom: 3px solid var(--secondary-color); 
-    padding: 15px 0;
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.main-nav li {
-    display: inline-block;
-    margin-left: 25px;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: color 0.3s;
-}
-
-.main-nav a:hover {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-}
-
-/* --- HERO SECTION (Background Image Integration) --- */
+/* --- HERO SECTION (Background Image) --- */
 .hero-section {
     color: white; 
-    padding: 150px 20px;
+    padding: 100px 20px 80px; /* Adjusted padding */
     text-align: center;
     
     /* BACKGROUND IMAGE STYLES */
     background-image: url('images/hero-background.jpg'); 
     background-size: cover; 
     background-position: center; 
-    background-attachment: fixed;
     position: relative;
     overflow: hidden;
+    margin-bottom: 30px; /* Space between hero and tabs */
 }
 
-/* Dark overlay to ensure text readability */
+/* Dark overlay */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -102,36 +55,91 @@ h1, h2, h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1;
 }
-
-/* Ensure text is above the overlay */
 .hero-section h1, .hero-section .subtitle, .hero-section p {
     position: relative;
     z-index: 2;
-}
-
-.hero-section h1 {
     color: white;
-    font-size: 4em;
-    margin-bottom: 0.1em;
+}
+.hero-section h1 { font-size: 3.5em; margin-bottom: 0.1em; }
+.subtitle { color: var(--secondary-color); font-weight: 900; }
+
+
+/* ==================================== */
+/* TAB LOGIC & STYLING         */
+/* ==================================== */
+
+.tabs-wrapper {
+    background-color: white;
+    padding-top: 20px;
 }
 
-.subtitle {
-    font-size: 1.8em;
-    color: var(--secondary-color);
-    font-weight: 900;
+/* HIDE the default radio buttons */
+.tabs-wrapper input[type="radio"] {
+    display: none;
 }
 
-/* --- PROBLEM SECTION --- */
+/* Style the navigation (labels) */
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--background-light);
+    margin-bottom: 20px;
+}
+
+.tab-label {
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text-color);
+    transition: color 0.3s, border-color 0.3s;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-label:hover {
+    color: var(--primary-color);
+}
+
+/* HIDE all content panels by default */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Show content panels when their corresponding radio button is CHECKED */
+#tab1:checked ~ .tab-content-area #content1,
+#tab2:checked ~ .tab-content-area #content2,
+#tab3:checked ~ .tab-content-area #content3 {
+    display: block;
+}
+
+/* Highlight the active tab label */
+#tab1:checked ~ .tabs-nav .tab-label:nth-child(1),
+#tab2:checked ~ .tabs-nav .tab-label:nth-child(2),
+#tab3:checked ~ .tabs-nav .tab-label:nth-child(3) {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Simple fade-in animation for a smoother transition */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* --- TAB-SPECIFIC STYLES --- */
+
+/* Strategy & Pillars Tab */
 .problem-section {
     text-align: center;
-    background-color: var(--background-light);
-}
-
-.outcome-box {
     background-color: white;
+}
+.outcome-box {
+    background-color: var(--background-light);
     border-left: 5px solid var(--secondary-color);
     padding: 30px;
     margin: 40px auto;
@@ -139,96 +147,57 @@ h1, h2, h3 {
     border-radius: 8px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
-
-/* --- PILLARS SECTION (3 Columns) --- */
 .pillars-section {
     background-color: var(--primary-color);
     color: white;
+    padding: 60px 0;
 }
-
-.pillars-section h2 {
-    color: white; 
-    margin-bottom: 50px;
-}
-
+.pillars-section h2 { color: white; margin-bottom: 50px; }
 .pillar-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     text-align: center;
 }
+.pillar { background-color: #ffffff20; padding: 30px; border-radius: 10px; }
+.pillar h3 { color: var(--secondary-color); }
+.container-narrow { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-.pillar {
-    background-color: #ffffff20; 
-    padding: 30px;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
 
-.pillar:hover {
-    transform: translateY(-5px); 
-    background-color: #ffffff30;
-}
-
-.pillar h3 {
-    color: var(--secondary-color);
-}
-
-/* --- MENU & OUTCOME SECTION --- */
-.menu-outcome-section {
-    text-align: center;
-}
-
+/* Menu & Outcome Tab */
+.menu-outcome-section { text-align: center; }
 .callout-box {
     background-color: var(--secondary-color);
-    color: var(--text-color);
     padding: 40px;
     border-radius: 8px;
     max-width: 700px;
     margin: 40px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 .callout-box h3 {
     color: var(--primary-color);
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
+.callout-box ul { list-style-type: none; padding: 0; text-align: left; display: inline-block; }
+.callout-box li { padding: 8px 0; font-weight: 600; font-size: 1.1em; }
 
-.callout-box ul {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-    display: inline-block;
-}
-.callout-box li {
-    padding: 8px 0;
-    font-weight: 600;
-    font-size: 1.1em;
-}
 
-/* --- CTA SECTION (QR Code Styling) --- */
+/* Free Audit Tab */
 .cta-section {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--background-light); /* Changed background for contrast */
     text-align: center;
-    padding: 100px 0;
+    padding: 60px 0;
 }
-
-.cta-section h2 {
-    color: white;
-    font-size: 2.5em;
-}
-
+.cta-section h2 { color: var(--primary-color); font-size: 2.2em; }
 .qr-code-img {
     display: block; 
     width: 150px;
     height: 150px;
     margin: 20px auto; 
-    border: 5px solid white; 
+    border: 5px solid var(--primary-color); 
 }
-
 .button {
     display: inline-block;
     background-color: var(--secondary-color);
@@ -241,10 +210,8 @@ h1, h2, h3 {
     margin-top: 20px;
     font-size: 1.1em;
 }
+.button:hover { background-color: #ffc107; }
 
-.button:hover {
-    background-color: #ffc107;
-}
 
 /* --- FOOTER --- */
 footer {
@@ -254,7 +221,6 @@ footer {
     font-size: 0.9em;
     background-color: #eee;
 }
-
 footer a {
     color: var(--primary-color);
     text-decoration: none;
