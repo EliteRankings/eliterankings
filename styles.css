@@ -39,7 +39,7 @@ h2, h3 {
     text-align: center;
     
     /* BACKGROUND IMAGE STYLES - REMEMBER TO UPLOAD hero-background.jpg */
-    background-image: url('images/hero-background.jpg'); 
+    background-image: url('images/initial.jpg'); 
     background-size: cover; 
     background-position: center; 
     position: relative;
