@@ -39,7 +39,7 @@ h2, h3 {
     text-align: center;
     
     /* 🔑 IMAGE PATH UPDATED TO initial.jpg 🔑 */
-    background-image: url('images/initial.jpg'); 
+    background-image: url('eliterankings/images/initial.jpg'); 
     background-size: cover; 
     background-position: center; 
     background-attachment: fixed;
