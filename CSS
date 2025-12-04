@@ -1,0 +1,170 @@
+/* --- GLOBAL STYLES --- */
+:root {
+    /* Define key brand colors */
+    --primary-color: #0d47a1; /* Dark Blue */
+    --secondary-color: #ffd700; /* Gold/Yellow Accent */
+    --background-light: #f4f4f9;
+    --text-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: white;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* --- HEADER / HERO SECTION --- */
+.hero-section {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    /* Optional: If you want to use the background image */
+    /* background-image: url('path/to/your/image.jpg'); 
+       background-size: cover; */
+}
+
+.hero-section h1 {
+    color: white;
+    font-size: 3.5em;
+    margin-bottom: 0.1em;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* --- PROBLEM SECTION --- */
+.problem-section {
+    text-align: center;
+    background-color: var(--background-light);
+}
+
+.outcome-box {
+    background-color: white;
+    border: 2px solid var(--secondary-color);
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.outcome-box h3 {
+    color: var(--primary-color);
+}
+
+/* --- PILLARS SECTION (3 Columns) --- */
+.pillars-section {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pillars-section h2 {
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+}
+
+.pillar-grid {
+    display: grid;
+    /* Creates 3 equal columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    text-align: center;
+}
+
+.pillar {
+    background-color: #ffffff1a; /* Semi-transparent white */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.pillar h3 {
+    color: white;
+}
+
+/* --- MENU & OUTCOME SECTION --- */
+.menu-outcome-section {
+    text-align: center;
+}
+
+.callout-box {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.callout-box h3 {
+    color: var(--primary-color);
+}
+
+.callout-box ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+.callout-box li {
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+/* --- CTA SECTION --- */
+.cta-section {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: white;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #ffc107; /* A slightly darker yellow on hover */
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
