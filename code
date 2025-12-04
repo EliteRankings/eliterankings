@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome GitHub Page</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Elite Rankings!</h1>
+    </header>
+
+    <div class="container"> 
+        <p>I am learning HTML and CSS, and this page is built entirely by me. It's currently hosted for free on GitHub Pages!</p>
+        
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="callout">
+            <h3>Start Your Own Journey</h3>
+            <p>You can set up your own page in just a few steps. Just keep practicing!</p>
+        </div>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Elite Rankings</p>
+    </footer>
+
+</body>
+</html>
+/* GLOBAL STYLES */
+body {
+    /* Sets the background color for the whole page */
+    background-color: #f4f4f9; 
+    /* Sets the default font */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    /* Removes default margin */
+    margin: 0; 
+}
+
+/* HEADER STYLES */
+header {
+    background-color: darkblue;
+    color: white;
+    /* Adds padding inside the header */
+    padding: 20px 0; 
+    /* Centers the text */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    /* Removes the margin above and below the h1 inside the header */
+    margin: 0; 
+}
+
+/* CONTAINER CLASS STYLES */
+.container {
+    /* This makes the container take up a maximum width */
+    max-width: 800px; 
+    /* This centers the container horizontally on the page */
+    margin: 0 auto; 
+    padding: 0 20px;
+}
+
+/* LIST/MENU STYLES */
+ul {
+    list-style: none; /* Removes the bullet points */
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: inline; /* Makes the list items sit next to each other */
+    margin: 0 10px;
+}
+
+a {
+    color: darkblue;
+    text-decoration: none; /* Removes the underline from links */
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline; /* Adds an underline when you hover */
+}
+
+/* CALLOUT CLASS STYLES (Specific Section) */
+.callout {
+    background-color: #fffacd; /* Light yellow background */
+    border-left: 5px solid darkorange;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+/* FOOTER STYLES */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+    font-size: 0.8em; /* Smaller font size */
+    color: #666;
+}
