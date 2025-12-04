@@ -3,75 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Rankings | From Invisible to Unmissable</title>
+    <title>Elite Rankings | Tabbed Interface</title>
     <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
 
-    <nav class="main-nav">
-        <div class="container nav-content">
-            <span class="logo">Elite Rankings</span>
-            <ul>
-                <li><a href="#problem">The Problem</a></li>
-                <li><a href="#pillars">3 Pillars</a></li>
-                <li><a href="#menu">Our Menu</a></li>
-                <li><a href="#contact">Free Audit</a></li>
-            </ul>
-        </div>
-    </nav>
-    
     <header class="hero-section">
         <h1>Elite Rankings</h1>
         <p class="subtitle">FROM INVISIBLE TO UNMISSABLE</p>
         <p>Turning Local Searches into Loyal Customers.</p>
     </header>
 
-    <section class="problem-section container" id="problem">
-        <h2>The Problem (Why We Exist)</h2>
-        <p>93% of online experiences begin with a search engine. If you are on Page 2, you don't exist. Your competitors are stealing your leads.</p>
-        <div class="outcome-box">
-            <h3>We Build Digital Bridges.</h3>
-            <p>We bridge the gap between Your Business and the People Searching for It.</p>
-        </div>
-    </section>
-
-    <section class="pillars-section" id="pillars">
-        <div class="container">
-            <h2>Why You Should Care (The 3 Pillars)</h2>
-            <div class="pillar-grid">
-                <div class="pillar">
-                    <h3>1. Findability</h3>
-                    <p>Speed is everything. Be found in seconds.</p>
-                </div>
-                <div class="pillar">
-                    <h3>2. Reputation</h3>
-                    <p>Reviews are your new resume.</p>
-                </div>
-                <div class="pillar">
-                    <h3>3. Bookings</h3>
-                    <p>Traffic is vanity; revenue is sanity.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="menu-outcome-section container" id="menu">
-        <h2>Our Menu - Rank, Rent & Lead Generation</h2>
-        <p>We build high-ranking assets and capture the leads. You service the customers.</p>
+    <div class="container tabs-wrapper">
         
-        <div class="callout-box">
-            <h3>The Outcome</h3>
-            <ul>
-                <li>Top 3 Google Ranking.</li>
-                <li>Automated Bookings.</li>
-                <li>Solid 5-Star Reputation.</li>
-            </ul>
-        </div>
-    </section>
+        <input type="radio" name="tabs" id="tab1" checked>
+        <input type="radio" name="tabs" id="tab2">
+        <input type="radio" name="tabs" id="tab3">
 
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <h2>Let's Check Your Engine.</h2>
-            <p>Free 10-Point SEO Audit for everyone in this room.</p>
+        <nav class="tabs-nav">
+            <label for="tab1" class="tab-label">Strategy & Pillars</label>
+            <label for="tab2" class="tab-label">Our Menu & Outcome</label>
+            <label for="tab3" class="tab-label">Free Audit</label>
+        </nav>
+
+        <div class="tab-content-area">
             
-            <img src="images/qr-code.png" alt="QR Code for Free 10-Point SEO Audit" class="qr-code-img">
+            <div class="tab-content" id="content1">
+                <section class="problem-section">
+                    <h2>The Problem (Why We Exist)</h2>
+                    <p>93% of online experiences begin with a search engine. If you are on Page 2, you don't exist. Your competitors are stealing your leads.</p>
+                    <div class="outcome-box">
+                        <h3>We Build Digital Bridges.</h3>
+                        <p>We bridge the gap between Your Business and the People Searching for It.</p>
+                    </div>
+                </section>
+
+                <section class="pillars-section full-width">
+                    <div class="container-narrow">
+                        <h2>Why You Should Care (The 3 Pillars)</h2>
+                        <div class="pillar-grid">
+                            <div class="pillar"><h3>1. Findability</h3><p>Speed is everything. Be found in seconds.</p></div>
+                            <div class="pillar"><h3>2. Reputation</h3><p>Reviews are your new resume.</p></div>
+                            <div class="pillar"><h3>3. Bookings</h3><p>Traffic is vanity; revenue is sanity.</p></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="tab-content" id="content2">
+                <section class="menu-outcome-section">
+                    <h2>Our Menu - Rank, Rent & Lead Generation</h2>
+                    <p>We build high-ranking assets and capture the leads. You service the customers.</p>
+                    
+                    <div class="callout-box">
+                        <h3>The Outcome</h3>
+                        <ul>
+                            <li>Top 3 Google Ranking.</li>
+                            <li>Automated Bookings.</li>
+                            <li>Solid 5-Star Reputation.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="tab-content" id="content3">
+                <section class="cta-section">
+                    <h2>Let's Check Your Engine.</h2>
+                    <p>Free 10-Point SEO Audit for everyone in this room.</p>
+                    
+                    <img src="images/qr-code.png" alt="QR Code for Free 10-Point SEO Audit" class="qr-code-img">
+                    
+                    <a href="mailto:sherisse.hughes@eliterankings.net" class="button">Contact Us Today</a>
+                </section>
+            </div>
+
+        </div> </div> <footer>
+        <p>&copy; 2025 Elite Rankings</p>
+        <p>Contact: <a href="mailto:sherisse.hughes@eliterankings.net">Sherisse Hughes</a>, <a href="mailto:mjazofeifa@eliterankings.net">María José Azofeifa</a>, <a href="mailto:anac@eliterankings.net">Ana Chinchilla</a>.</p>
+    </footer>
+
+</body>
+</html>
