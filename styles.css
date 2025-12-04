@@ -1,7 +1,7 @@
-/* --- GLOBAL STYLES & VARIABLES (New Pinks and Roses Theme) --- */
+/* --- GLOBAL STYLES & VARIABLES (Pinks and Roses Theme) --- */
 :root {
-    --primary-color: #880E4F; /* Deep Rose / Maroon (for headings, buttons, main structure) */
-    --secondary-color: #EC4493; /* Medium Vibrant Pink (for accents, highlights) */
+    --primary-color: #880E4F; /* Deep Rose / Maroon */
+    --secondary-color: #EC4493; /* Medium Vibrant Pink */
     --background-light: #FCE4EC; /* Very light pink background */
     --text-color: #333;
     --font-heading: 'Segoe UI', Arial, sans-serif;
@@ -10,7 +10,7 @@
 body {
     font-family: Arial, sans-serif;
     color: var(--text-color);
-    background-color: white; /* Base background remains white for contrast */
+    background-color: white; 
     margin: 0;
     line-height: 1.6;
 }
@@ -26,28 +26,29 @@ section {
 }
 
 h2, h3 {
-    color: var(--primary-color); /* Deep Rose Headings */
+    color: var(--primary-color);
     font-family: var(--font-heading);
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* --- HERO SECTION (Background Image) --- */
+/* --- HERO SECTION (Background Image Integration) --- */
 .hero-section {
     color: white; 
     padding: 100px 20px 80px; 
     text-align: center;
     
-    /* BACKGROUND IMAGE STYLES - REMEMBER TO UPLOAD hero-background.jpg */
+    /* 🔑 IMAGE PATH UPDATED TO initial.jpg 🔑 */
     background-image: url('images/initial.jpg'); 
     background-size: cover; 
     background-position: center; 
+    background-attachment: fixed;
     position: relative;
     overflow: hidden;
     margin-bottom: 30px; 
 }
 
-/* Dark overlay to ensure text readability */
+/* Dark overlay to ensure text readability over the background image */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -58,6 +59,8 @@ h2, h3 {
     background-color: rgba(0, 0, 0, 0.4); 
     z-index: 1;
 }
+
+/* Ensure text is above the overlay */
 .hero-section h1, .hero-section .subtitle, .hero-section p {
     position: relative;
     z-index: 2;
@@ -65,33 +68,26 @@ h2, h3 {
 }
 .hero-section h1 { font-size: 3.5em; margin-bottom: 0.1em; }
 .subtitle { 
-    color: var(--secondary-color); /* Vibrant Pink Accent */
+    color: var(--secondary-color); 
     font-weight: 900; 
 }
 
 
 /* ==================================== */
-/* TAB LOGIC & STYLING         */
+/* TAB LOGIC AND STYLING         */
 /* ==================================== */
 
 .tabs-wrapper {
     background-color: white;
     padding-top: 20px;
 }
-
-/* HIDE the default radio buttons */
-.tabs-wrapper input[type="radio"] {
-    display: none;
-}
-
-/* Style the navigation (labels) */
+.tabs-wrapper input[type="radio"] { display: none; }
 .tabs-nav {
     display: flex;
     justify-content: center;
     border-bottom: 2px solid var(--background-light);
     margin-bottom: 20px;
 }
-
 .tab-label {
     padding: 15px 30px;
     cursor: pointer;
@@ -101,10 +97,7 @@ h2, h3 {
     transition: color 0.3s, border-color 0.3s;
     border-bottom: 3px solid transparent;
 }
-
-.tab-label:hover {
-    color: var(--primary-color);
-}
+.tab-label:hover { color: var(--primary-color); }
 
 /* HIDE all content panels by default */
 .tab-content {
@@ -112,7 +105,7 @@ h2, h3 {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Show content panels when their corresponding radio button is CHECKED */
+/* SHOW content panels when the radio button is CHECKED */
 #tab1:checked ~ .tab-content-area #content1,
 #tab2:checked ~ .tab-content-area #content2,
 #tab3:checked ~ .tab-content-area #content3 {
@@ -126,24 +119,16 @@ h2, h3 {
     color: var(--primary-color);
     border-bottom-color: var(--primary-color);
 }
-
-/* Simple fade-in animation for a smoother transition */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-
 /* --- TAB-SPECIFIC STYLES --- */
-
-/* Strategy & Pillars Tab */
-.problem-section {
-    text-align: center;
-    background-color: white;
-}
+.problem-section { text-align: center; background-color: white; }
 .outcome-box {
-    background-color: var(--background-light); /* Light Pink Background */
-    border-left: 5px solid var(--secondary-color); /* Vibrant Pink Bar */
+    background-color: var(--background-light); 
+    border-left: 5px solid var(--secondary-color); 
     padding: 30px;
     margin: 40px auto;
     max-width: 700px;
@@ -151,26 +136,18 @@ h2, h3 {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
 .pillars-section {
-    background-color: var(--primary-color); /* Deep Rose Background */
+    background-color: var(--primary-color); 
     color: white;
     padding: 60px 0;
 }
 .pillars-section h2 { color: white; margin-bottom: 50px; }
-.pillar-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    text-align: center;
-}
+.pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
 .pillar { background-color: #ffffff20; padding: 30px; border-radius: 10px; }
 .pillar h3 { color: var(--secondary-color); }
-.container-narrow { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
-
-/* Menu & Outcome Tab */
 .menu-outcome-section { text-align: center; }
 .callout-box {
-    background-color: var(--secondary-color); /* Vibrant Pink Callout */
+    background-color: var(--secondary-color); 
     padding: 40px;
     border-radius: 8px;
     max-width: 700px;
@@ -186,10 +163,8 @@ h2, h3 {
 .callout-box ul { list-style-type: none; padding: 0; text-align: left; display: inline-block; }
 .callout-box li { padding: 8px 0; font-weight: 600; font-size: 1.1em; }
 
-
-/* Free Audit Tab */
 .cta-section {
-    background-color: var(--background-light); /* Light Pink Background */
+    background-color: var(--background-light); 
     text-align: center;
     padding: 60px 0;
 }
@@ -203,8 +178,8 @@ h2, h3 {
 }
 .button {
     display: inline-block;
-    background-color: var(--secondary-color); /* Vibrant Pink Button */
-    color: white; /* Button text is white for contrast */
+    background-color: var(--secondary-color); 
+    color: white; 
     padding: 15px 40px;
     text-decoration: none;
     font-weight: bold;
@@ -213,8 +188,7 @@ h2, h3 {
     margin-top: 20px;
     font-size: 1.1em;
 }
-.button:hover { background-color: #FF70A4; } /* Slightly darker pink on hover */
-
+.button:hover { background-color: #FF70A4; } 
 
 /* --- FOOTER --- */
 footer {
