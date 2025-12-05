@@ -48,7 +48,6 @@ h2, h3 {
     padding: 100px 20px 80px; 
     text-align: center;
     
-    /* Hero Image Reference: initial.jpg */
     background-image: url('images/initial.jpg'); 
     background-size: cover; 
     background-position: center; 
@@ -150,9 +149,21 @@ h2, h3 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* You don't need to reference all images in CSS if they are in the HTML, 
-   but if you wanted specific styling based on the image, you would use 
-   classes. The main content-img class is sufficient. */
+/* --- FIX FOR LARGE IMAGES --- */
+.qr-code-img {
+    display: block; 
+    width: 150px; /* Specific, smaller size for QR code */
+    height: 150px;
+    margin: 20px auto; 
+    border: 5px solid var(--primary-color); 
+}
+/* Style for Traffic Rings image, ensuring it fits well within the grid column */
+.menu-grid img[alt="Water faucet turning on with leads flowing"] {
+    max-width: 80%; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
 /* --- TAB 1 STYLES --- */
 .story-section {
@@ -204,3 +215,58 @@ h2, h3 {
     text-align: center;
 }
 .callout-box {
+    background-color: var(--secondary-color); 
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+.callout-box ul {
+    list-style: none;
+}
+.callout-box li {
+    font-size: 1.1em;
+    padding: 5px 0;
+}
+.callout-box strong {
+    color: var(--primary-color);
+}
+
+/* --- TAB 3 STYLES --- */
+.cta-section {
+    background-color: var(--background-light); 
+    text-align: center;
+    padding: 60px 0;
+}
+.cta-section h2 { color: var(--primary-color); font-size: 2.2em; }
+
+.button {
+    display: inline-block;
+    background-color: var(--secondary-color); 
+    color: white; 
+    padding: 15px 40px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px; 
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    font-size: 1.1em;
+}
+.button:hover { background-color: #FF70A4; } 
+
+
+/* --- FOOTER FIXES --- */
+footer {
+    text-align: center; /* Ensures all content is centered */
+    padding: 25px;
+    border-top: 1px solid #ccc;
+    font-size: 0.9em;
+    background-color: var(--background-light);
+}
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
