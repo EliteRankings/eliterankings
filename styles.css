@@ -20,6 +20,11 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+.container-narrow {
+    max-width: 900px; 
+    margin: 0 auto; 
+    padding: 0 20px;
+}
 
 section {
     padding: 40px 0;
@@ -31,6 +36,11 @@ h2, h3 {
     text-align: center;
     margin-bottom: 20px;
 }
+.sub-headline {
+    font-weight: bold;
+    font-style: italic;
+    color: var(--secondary-color);
+}
 
 /* --- HERO SECTION (Background Image Integration) --- */
 .hero-section {
@@ -38,7 +48,7 @@ h2, h3 {
     padding: 100px 20px 80px; 
     text-align: center;
     
-    /* 🔑 IMAGE PATH UPDATED TO initial.jpg 🔑 */
+    /* Background Image Reference */
     background-image: url('images/Initial.jpg'); 
     background-size: cover; 
     background-position: center; 
@@ -47,8 +57,6 @@ h2, h3 {
     overflow: hidden;
     margin-bottom: 30px; 
 }
-
-/* Dark overlay to ensure text readability over the background image */
 .hero-section::before {
     content: "";
     position: absolute;
@@ -59,8 +67,6 @@ h2, h3 {
     background-color: rgba(0, 0, 0, 0.4); 
     z-index: 1;
 }
-
-/* Ensure text is above the overlay */
 .hero-section h1, .hero-section .subtitle, .hero-section p {
     position: relative;
     z-index: 2;
@@ -74,7 +80,7 @@ h2, h3 {
 
 
 /* ==================================== */
-/* TAB LOGIC AND STYLING         */
+/* TAB LOGIC & STYLING         */
 /* ==================================== */
 
 .tabs-wrapper {
@@ -99,20 +105,15 @@ h2, h3 {
 }
 .tab-label:hover { color: var(--primary-color); }
 
-/* HIDE all content panels by default */
 .tab-content {
     display: none;
     animation: fadeIn 0.5s ease-in-out;
 }
-
-/* SHOW content panels when the radio button is CHECKED */
 #tab1:checked ~ .tab-content-area #content1,
 #tab2:checked ~ .tab-content-area #content2,
 #tab3:checked ~ .tab-content-area #content3 {
     display: block;
 }
-
-/* Highlight the active tab label */
 #tab1:checked ~ .tabs-nav .tab-label:nth-child(1),
 #tab2:checked ~ .tabs-nav .tab-label:nth-child(2),
 #tab3:checked ~ .tabs-nav .tab-label:nth-child(3) {
@@ -124,17 +125,54 @@ h2, h3 {
     to { opacity: 1; }
 }
 
-/* --- TAB-SPECIFIC STYLES --- */
-.problem-section { text-align: center; background-color: white; }
-.outcome-box {
-    background-color: var(--background-light); 
-    border-left: 5px solid var(--secondary-color); 
-    padding: 30px;
-    margin: 40px auto;
-    max-width: 700px;
-    border-radius: 8px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+/* --- Content Image/Text Grids --- */
+.story-grid, .problem-grid, .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 20px 0;
 }
+/* Reverse the grid order for a staggered look */
+.menu-grid.reverse {
+    grid-template-areas: "visual text";
+}
+.menu-grid.reverse .menu-visual {
+    grid-area: visual;
+}
+.menu-grid.reverse .menu-text {
+    grid-area: text;
+}
+
+.content-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- TAB 1 STYLES --- */
+.story-section {
+    text-align: center;
+    padding-bottom: 0;
+}
+.story-text {
+    text-align: left;
+}
+.problem-section {
+    text-align: center;
+    background-color: var(--background-light);
+    margin-bottom: 30px;
+}
+.problem-text {
+    text-align: left;
+}
+.problem-text ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
 .pillars-section {
     background-color: var(--primary-color); 
     color: white;
@@ -145,24 +183,45 @@ h2, h3 {
 .pillar { background-color: #ffffff20; padding: 30px; border-radius: 10px; }
 .pillar h3 { color: var(--secondary-color); }
 
-.menu-outcome-section { text-align: center; }
+/* --- TAB 2 STYLES --- */
+.technical-menu, .growth-menu, .trust-menu {
+    padding: 30px 0;
+    border-bottom: 1px dashed var(--background-light);
+    text-align: left;
+}
+.growth-menu {
+    background-color: var(--background-light);
+}
+.menu-text ul {
+    list-style: square;
+    margin-left: 20px;
+    padding-left: 0;
+}
+.why-us {
+    text-align: center;
+}
 .callout-box {
     background-color: var(--secondary-color); 
-    padding: 40px;
+    color: white;
+    padding: 30px;
     border-radius: 8px;
     max-width: 700px;
     margin: 40px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
 }
-.callout-box h3 {
+.callout-box ul {
+    list-style: none;
+}
+.callout-box li {
+    font-size: 1.1em;
+    padding: 5px 0;
+}
+.callout-box strong {
     color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
 }
-.callout-box ul { list-style-type: none; padding: 0; text-align: left; display: inline-block; }
-.callout-box li { padding: 8px 0; font-weight: 600; font-size: 1.1em; }
 
+/* --- TAB 3 STYLES --- */
 .cta-section {
     background-color: var(--background-light); 
     text-align: center;
@@ -189,6 +248,7 @@ h2, h3 {
     font-size: 1.1em;
 }
 .button:hover { background-color: #FF70A4; } 
+
 
 /* --- FOOTER --- */
 footer {
