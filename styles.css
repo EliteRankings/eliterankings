@@ -1,47 +1,109 @@
-/* Logo Styling */
-.logo-container {
+/* 1. THE LOGIC: Hides all tabs by default */
+.tab-content {
+    display: none; 
+    animation: fadeIn 0.5s ease;
+}
+
+/* 2. THE TRIGGER: Only shows the content of the SELECTED radio button */
+#tab1:checked ~ .tab-content-area #content1,
+#tab2:checked ~ .tab-content-area #content2,
+#tab3:checked ~ .tab-content-area #content3 {
+    display: block;
+}
+
+/* 3. BRAND COLORS & STYLES */
+:root {
+    --elite-pink: #d63384;
+    --elite-purple: #6f42c1;
+    --dark-bg: #0f0f12;
+    --surface: #1a1a1f;
+    --gradient: linear-gradient(135deg, var(--elite-pink), var(--elite-purple));
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents side-scrolling on mobile */
+}
+
+/* 4. LOGO & HEADER */
+.hero-section {
     text-align: center;
-    margin-bottom: 20px;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, rgba(111, 66, 193, 0.15), var(--dark-bg));
 }
 
 .main-logo {
-    max-width: 200px; /* Adjust size as needed */
+    max-width: 180px; /* Adjust size for mobile */
     height: auto;
-    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.1));
+    margin-bottom: 20px;
 }
 
-/* Responsive Adjustments for Mobile */
+/* 5. TABS NAVIGATION */
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.tab-label {
+    background: #25252b;
+    padding: 12px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    flex: 1; /* Makes buttons equal width on mobile */
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Selected Tab Color */
+#tab1:checked ~ .tabs-nav label[for="tab1"],
+#tab2:checked ~ .tabs-nav label[for="tab2"],
+#tab3:checked ~ .tabs-nav label[for="tab3"] {
+    background: var(--gradient);
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4);
+}
+
+/* 6. PICTURE & TEXT GRID (Stops images from flying everywhere) */
+.menu-grid, .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Side by side on desktop */
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+
+.content-img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* 7. MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 1.8rem;
-        padding: 0 15px;
-    }
-
-    .tabs-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .tab-label {
-        padding: 10px 15px;
-        font-size: 0.9rem;
-        margin: 5px;
-        flex: 1 1 auto; /* Allows labels to stack or wrap nicely */
+    .menu-grid, .story-grid {
+        grid-template-columns: 1fr; /* Stacks image/text on mobile */
         text-align: center;
     }
-
-    .menu-grid, .story-grid {
-        display: flex;
-        flex-direction: column; /* Stacks image and text vertically on mobile */
-    }
-
+    
     .menu-grid.reverse {
-        flex-direction: column-reverse; /* Keeps text above image on mobile for consistency */
+        display: flex;
+        flex-direction: column-reverse; /* Puts text above image */
     }
 
-    .content-img {
-        width: 100%;
-        margin-top: 20px;
+    .main-logo {
+        max-width: 140px;
     }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
