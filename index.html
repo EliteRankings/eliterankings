@@ -1,9 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Rankings | Lead Generation & SEO</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Brand Variables --- */
+        :root {
+            --elite-pink: #d63384;
+            --elite-purple: #6f42c1;
+            --dark-bg: #0f0f12;
+            --surface: #1a1a1f;
+            --text-main: #ffffff;
+            --text-muted: #b0b0b0;
+            --gradient: linear-gradient(135deg, var(--elite-pink), var(--elite-purple));
+        }
+
+        /* --- Global Reset --- */
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Hero & Logo --- */
+        .hero-section {
+            padding: 60px 20px 40px;
+            text-align: center;
+            background: radial-gradient(circle at top, rgba(111, 66, 193, 0.2) 0%, transparent 70%);
+        }
+
+        .main-logo {
+            max-width: 220px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(214, 51, 132, 0.3));
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* --- TAB LOGIC (The Fix) --- */
+        input[type="radio"] {
+            display: none; /* Hides the actual radio circles */
+        }
+
+        .tab-content {
+            display: none; /* Hides all content by default */
+            animation: fadeIn 0.4s ease;
+        }
+
+        /* Shows only the content matching the checked radio button */
+        #tab1:checked ~ .tab-content-area #content1,
+        #tab2:checked ~ .tab-content-area #content2,
+        #tab3:checked ~ .tab-content-area #content3 {
+            display: block;
+        }
+
+        /* --- Navigation Tabs --- */
+        .tabs-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+        }
+
+        .tab-label {
+            padding: 12px 25px;
+            background: var(--surface);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+            color: var(--text-muted);
+        }
+
+        .tab-label:hover {
+            border-color: var(--elite-pink);
+        }
+
+        /* Highlighting active tab button */
+        #tab1:checked ~ .tabs-nav label[for="tab1"],
+        #tab2:checked ~ .tabs-nav label[for="tab2"],
+        #tab3:checked ~ .tabs-nav label[for="tab3"] {
+            background: var(--gradient);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4);
+        }
+
+        /* --- Content Layout --- */
+        .tab-content-area {
+            background: var(--surface);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .grid-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .content-img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--elite-pink);
+            font-weight: bold;
+        }
+
+        /* --- Buttons --- */
+        .button {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(214, 51, 132, 0.5);
+        }
+
+        /* --- Mobile Optimization --- */
+        @media (max-width: 768px) {
+            .grid-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .grid-section.reverse {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .hero-section h1 { font-size: 1.8rem; }
+
+            .tabs-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tab-label { width: 80%; }
+            
+            .tab-content-area { padding: 20px; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a { color: var(--elite-pink); text-decoration: none; }
+    </style>
+</head>
 <body>
 
-    <header class="hero-section">
-        <div class="logo-container">
-            <img src="images/logoback.png" alt="Elite Rankings Logo" class="main-logo">
-        </div>
+    <header class="hero-section container">
+        <img src="images/logoback.png" alt="Elite Rankings Logo" class="main-logo">
         <h1>Your Business, Found & Secured.</h1>
         <p class="subtitle">Digital Growth Strategies with Corporate Precision.</p>
     </header>
@@ -23,74 +235,70 @@
         <div class="tab-content-area">
             
             <div class="tab-content" id="content1">
-                <section class="story-section">
-                    <h2>Driven by Purpose, Powered by Skill.</h2>
-                    <div class="story-grid">
-                        <div class="story-text">
-                            <p><strong>Who We Are:</strong> Women on a mission to make your business visible.</p>
-                            <p><strong>The Blend:</strong> We combine Cybersecurity & Process Engineering with aggressive Lead Generation.</p>
-                            <p>We bring corporate discipline to local business marketing.</p>
-                        </div>
-                        <div class="story-visual">
-                            <img src="images/Storefront.jpg" alt="Growth and security" class="content-img">
-                        </div>
+                <div class="grid-section">
+                    <div class="text-block">
+                        <h2>Driven by Purpose.</h2>
+                        <p><strong>Who We Are:</strong> Women on a mission to make your business visible.</p>
+                        <p><strong>The Blend:</strong> We combine Cybersecurity & Process Engineering with aggressive Lead Generation Strategies.</p>
+                        <p>We bring corporate discipline to local business marketing—ensuring you aren't just found, but trusted.</p>
                     </div>
-                </section>
+                    <div class="image-block">
+                        <img src="images/Storefront.jpg" alt="Local Growth" class="content-img">
+                    </div>
+                </div>
             </div>
 
             <div class="tab-content" id="content2">
-                
-                <section class="technical-menu">
-                    <h2>01. Full-Page SEO Excellence</h2>
-                    <div class="menu-grid">
-                        <div class="menu-text">
-                            <p class="sub-headline">We optimize every page to be a ranking powerhouse.</p>
-                            <ul>
-                                <li><strong>On-Page Precision:</strong> Optimizing metadata, headers, and content for every single sub-page.</li>
-                                <li><strong>Technical Health:</strong> Ensuring HTTPS security and Python-level speed optimization.</li>
-                                <li><strong>Keyword Dominance:</strong> Targeting the specific terms your local customers are actually searching for.</li>
-                            </ul>
-                        </div>
-                        <div class="menu-visual">
-                            <img src="images/Diagnosis.jpg" alt="SEO Analysis" class="content-img">
-                        </div>
+                <div class="grid-section">
+                    <div class="text-block">
+                        <h2 style="color: var(--elite-pink);">01. Local Lead Partnership</h2>
+                        <p>Join our exclusive network of local providers. We build and rank digital assets that generate high-intent leads for your specific industry.</p>
+                        <ul>
+                            <li><strong>Immediate Flow:</strong> Skip the 6-month wait for SEO.</li>
+                            <li><strong>Exclusive Leads:</strong> Phone calls delivered only to you.</li>
+                            <li><strong>Scalability:</strong> Rent our high-ranking spots to dominate your area.</li>
+                        </ul>
                     </div>
-                </section>
+                    <div class="image-block">
+                        <img src="images/Traffic rings.jpg" alt="Lead Flow" class="content-img">
+                    </div>
+                </div>
 
-                <section class="growth-menu">
-                    <h2>02. Local Lead Partnership</h2>
-                    <div class="menu-grid reverse">
-                        <div class="menu-visual">
-                            <img src="images/Traffic rings.jpg" alt="Leads flowing" class="content-img">
-                        </div>
-                        <div class="menu-text">
-                            <p class="sub-headline">Join our network and receive exclusive local leads.</p>
-                            <ul>
-                                <li><strong>The Concept:</strong> Become a part of our high-ranking local lead pages.</li>
-                                <li><strong>The Benefit:</strong> You don't wait for SEO to kick in; you jump into a page that is already winning.</li>
-                                <li><strong>The Outcome:</strong> High-intent phone calls and inquiries delivered directly to your business.</li>
-                            </ul>
-                            <p><em>Ideal for businesses looking to scale quickly without the technical headache.</em></p>
-                        </div>
+                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
+
+                <div class="grid-section reverse">
+                    <div class="image-block">
+                        <img src="images/Diagnosis.jpg" alt="SEO Audit" class="content-img">
                     </div>
-                </section>
+                    <div class="text-block">
+                        <h2 style="color: var(--elite-purple);">02. Full-Page SEO Strategy</h2>
+                        <p>We optimize every single page of your website to ensure Google understands exactly who you are and why you should be #1.</p>
+                        <ul>
+                            <li><strong>On-Page Optimization:</strong> Keywords, meta-tags, and header structures for every page.</li>
+                            <li><strong>Site Health:</strong> Technical fixes for speed, mobile responsiveness, and security.</li>
+                            <li><strong>Authority Building:</strong> Making your brand the local expert in your niche.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <div class="tab-content" id="content3">
-                <section class="cta-section">
-                    <h2>Let's Audit Your Digital Health.</h2>
-                    <p>Free Technical & SEO Strategy Session.</p>
-                    <img src="images/download.png" alt="QR Code" class="qr-code-img">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScGIFfLjUq0ktM3dGz2bQGzuMabsxLAaUZJUvmLzUWVG-nGgA/viewform?usp=sharing" class="button" target="_blank">Contact Us Today</a>
-                </section>
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <h2>Audit Your Digital Health.</h2>
+                    <p>Scan the code or click below to start your free Technical & SEO Strategy Session.</p>
+                    <img src="images/download.png" alt="QR Code" style="max-width: 200px; margin: 20px 0; border-radius: 10px;">
+                    <br>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScGIFfLjUq0ktM3dGz2bQGzuMabsxLAaUZJUvmLzUWVG-nGgA/viewform?usp=sharing" class="button" target="_blank">Get Your Free Audit</a>
+                </div>
             </div>
 
         </div> 
     </div> 
 
     <footer>
-        <p>&copy; 2025 Elite Rankings</p>
-        <p>Contact: <a href="mailto:sherisse.hughes@eliterankings.net">Sherisse Hughes</a>, <a href="mailto:mjazofeifa@eliterankings.net">María José Azofeifa</a>.</p>
+        <p>&copy; 2025 Elite Rankings | Secure. Rank. Grow.</p>
+        <p>Contact: <a href="mailto:sherisse.hughes@eliterankings.net">Sherisse Hughes</a> | <a href="mailto:mjazofeifa@eliterankings.net">María José Azofeifa</a></p>
     </footer>
 
 </body>
+</html>
