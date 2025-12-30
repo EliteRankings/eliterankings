@@ -107,3 +107,47 @@ body {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* --- Professional Footer Alignment --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.footer-contacts a {
+    color: var(--elite-pink);
+    text-decoration: none;
+    white-space: nowrap; /* Keeps individual names from breaking in half */
+    transition: 0.3s;
+}
+
+.footer-contacts a:hover {
+    color: white;
+}
+
+.sep {
+    color: rgba(255,255,255,0.2);
+}
+
+/* Mobile Fix: Stack them vertically on very small screens */
+@media (max-width: 600px) {
+    .footer-contacts {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .sep {
+        display: none; /* Hide the bars on mobile for a cleaner look */
+    }
+}
